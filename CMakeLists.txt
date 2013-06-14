@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.6.4)
+include_directories(${PROJECT_SOURCE_DIR})
+add_library(nx_socket STATIC nx_socket.h nx_socket.c)
+add_executable(udpechod udpechod.c)
+target_link_libraries(udpechod nx_socket)
+add_executable(raw_recv_example raw_recv_example.c)
+target_link_libraries(raw_recv_example nx_socket)
